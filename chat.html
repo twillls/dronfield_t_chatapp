@@ -10,11 +10,16 @@
     <main id="app">
         <h2>This is where awesome chat messages will show up!!</h2>
 
+        <!-- Vue custom message component goes here -->
+
         <section class="message-wrapper">
             <textarea class="text-message" name="" id="" cols="30" rows="10"></textarea>
             <input type="submit" value="send">
         </section>
     </main>
+    <!-- Socket first... -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Then Vue... --> 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- This is our own file, defer it to ensure it runs last -->
     <script defer src="scripts/main.js"></script>
