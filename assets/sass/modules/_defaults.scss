@@ -25,3 +25,19 @@ a {
         cursor: pointer;
     }
 }
+
+.new-message {
+    padding: 10px;
+    background-color: lightpink;
+    color: #212121;
+    border-radius: 8px;
+    float: left;
+    clear: both;
+}
+
+.my-message {
+    background-color: lightblue;
+    float: right;
+}
+
+.hidden { display: none; }
