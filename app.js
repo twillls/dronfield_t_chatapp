@@ -35,7 +35,7 @@ messenger.on("connection", (socket) => {
 	socket.on("chatmessage", function(msg){
 		console.log(msg);
 		
-		messenger.emit("message"), { id: socket.id, message: msg }
+		messenger.emit("message", { id: socket.id, message: msg });
 	});
 
 	socket.on("disconnect", () => {

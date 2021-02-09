@@ -1,12 +1,18 @@
 export default {
-    props: ['msg'],
+    props: ['msg', 'socketid'],
 
     template:
     `
-    <article>
-        <h1>This is a message</h1>
+    <article class="new-message" :class="{ 'my-message' : matchedID }">
+        <h1 class="hidden">This is a message</h1>
         <h4> {{msg.message.name}} says: </h4>
         <p> {{msg.message.content}} </p>
     </article>
-    `
+    `,
+
+    data: function(){
+        return {
+            matchedID: this.socketid.sID == this.msg.id
+        }
+    }
 }
