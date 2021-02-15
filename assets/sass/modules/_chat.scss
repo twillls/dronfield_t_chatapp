@@ -1,0 +1,27 @@
+.message-wrapper{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    textarea {
+        width: 90vw;
+        border: none;
+        outline: none;
+        resize:inherit;
+        overflow: auto;
+        border-radius: 25px;
+        padding: .5rem 1.5rem;
+        background-color: $opaque-white;
+
+    }
+
+    input {
+        padding: 0 1.5rem;
+        border-radius: 25px;
+        background-color: $opaque-white;
+        font-size: 12px;
+    }
+}
