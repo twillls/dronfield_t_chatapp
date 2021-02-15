@@ -10,7 +10,7 @@ app.use(express.static("public"));
 const port = process.env.PORT || 5050;
 
 app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "index.html")); //localhost:3000/(index.html)
+	res.sendFile(path.join(__dirname, "chat.html")); //localhost:3000/(index.html)
 });
 
 app.get("/chat", (req, res) => {
