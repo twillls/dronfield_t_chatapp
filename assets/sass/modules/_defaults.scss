@@ -7,9 +7,11 @@
 }
 
 body {
-    background-color: #ffbdda;
     font-family: $default-family;
     font-size: 16px;
+
+    background: rgb(255,205,205);
+    
 }
 
 a { 
@@ -26,15 +28,17 @@ a {
 
 .new-message {
     padding: 10px;
-    background-color: lightpink;
+    background-color: lightblue;
     color: #212121;
     border-radius: 8px;
     float: left;
     clear: both;
+    margin: 10px;
+    filter: $drop-shadow;
 }
 
 .my-message {
-    background-color: lightblue;
+    background-color: rgb(253, 193, 202);
     float: right;
 }
 

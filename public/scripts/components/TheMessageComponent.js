@@ -1,5 +1,5 @@
 export default {
-    props: ['msg', 'socketid'],
+    props: ['msg', 'socketid', 'name'],
 
     template:
     `

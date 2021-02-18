@@ -38,6 +38,12 @@ messenger.on("connection", (socket) => {
 		messenger.emit("message", { id: socket.id, message: msg });
 	});
 
+	socket.on("nickname", function(name){
+		console.log(name);
+
+		messenger.emit("nickname", { nickname: name });
+	})
+
 	socket.on("disconnect", () => {
 		console.log("a user disconnected");
 	});
