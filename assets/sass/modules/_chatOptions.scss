@@ -4,17 +4,20 @@
     padding: 5%;
     border-radius: 25px;
 
-    color: white;
+    color: rgb(71, 71, 71);
 
     filter: $drop-shadow;
 
-    h2 {font-weight: 100;}
+    h2 {
+        font-weight: 100;
+    }
 
     .change-user-button{ 
         background: white;
         padding: 8px 15px;
         border-radius: 25px;
         font-size: 12px;
+        font-weight: 200;
         
         margin-top: 20px;
     }
@@ -28,6 +31,7 @@
         border-radius: 25px;
         padding: 8px 15px;
         width: 53%;
+        font-weight: 100;
         font-size: 12px;
     }
 
@@ -35,8 +39,12 @@
         background: white;
         border-radius: 15px;
         padding: 5px 15px;
+        font-weight: 100;
 
         margin-top: 20px;
+
+        font-family: $default-family;
+        font-weight: 200;
 
         &:hover { background: pink; }
     }
