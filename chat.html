@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <section class="background"></section>
     <main id="app">
         <section class="chat-options">
             <div class="title">
@@ -18,7 +19,8 @@
             <div class="option-buttons">
                 <button @click.prevent="toggleChangeUsername" class="change-user-button">Change Username</button>
                 <div class="change-user show-change-user">
-                    <input :name="nickname" v-model="nickname" v-on:keyup.enter="changeNickname" class="change-user-input" type="text" placeholder="username" maxlength="30">
+                    <!-- <input v-bind:value="name" v-on:keyup.enter="changeNickname" class="change-user-input" type="text" placeholder="Anonymous" maxlength="30"> -->
+                    <nickname v-model="nickname"></nickname>
                     <input class="change-user-submit" @click.prevent="changeNickname" type="submit" value="OK">
                 </div>
             </div>
@@ -41,6 +43,7 @@
         </section>
 
     </main>
+    
     <!-- Socket first... -->
     <script src="/socket.io/socket.io.js"></script>
     <!-- Then Vue... --> 

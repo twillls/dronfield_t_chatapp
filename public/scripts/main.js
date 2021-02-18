@@ -21,7 +21,8 @@ import Nickname from "./components/TheNicknameComponent.js";
 
     function appendNickname(nickname){
         // push new nickname
-        vm.username=nickname;
+        console.log(vm.nickname);
+        debugger;
     }
 
 
@@ -31,7 +32,6 @@ import Nickname from "./components/TheNicknameComponent.js";
             nickname: "",
             socketID: "",
             message: "",
-            username: "",
             showUserChange: false,
             
         },
@@ -43,15 +43,14 @@ import Nickname from "./components/TheNicknameComponent.js";
         methods: {
             dispatchMessage(){
                 // debugger;
-                socket.emit("chatmessage", {content: this.message, name: this.username.nickname.name || "Anonymous" });
+                socket.emit("chatmessage", {content: this.message, name: this.nickname || "Anonymous" });
             
                 this.message = "";
             },
 
             changeNickname(){
                 socket.emit("nickname", {name: this.nickname});
-
-                this.nickname = "";
+                debugger;
             },
 
             toggleChangeUsername(target){
@@ -63,7 +62,7 @@ import Nickname from "./components/TheNicknameComponent.js";
 
         components: {
             newmessage: ChatMessage,
-            newNickname: Nickname,
+            nickname: Nickname,
         }
 
     }).$mount("#app");

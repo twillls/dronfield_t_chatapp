@@ -1,9 +1,14 @@
 export default {
-    props: ['msg', 'socketid'],
+    props: ['nickname'],
 
-    data: function(){
-        return {
-            matchedID: this.socketid.sID == this.msg.id
-        }
-    }
+    template:
+    `
+    <input 
+        v-bind:value="nickname" 
+        v-on:keyup.enter="changeNickname" 
+        class="change-user-input"
+        type="text"
+    >
+    `,
+
 }
