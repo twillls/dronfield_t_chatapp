@@ -35,6 +35,14 @@ a {
     clear: both;
     margin: 10px;
     filter: $drop-shadow;
+
+    font-family: $default-family;
+    font-weight: 200;
+
+    h4 {
+        font-family: $default-family;
+        font-weight: 100;
+    }
 }
 
 .my-message {
