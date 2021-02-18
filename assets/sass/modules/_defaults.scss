@@ -6,6 +6,20 @@
     box-sizing: border-box;
 }
 
+.background{
+    z-index: -100;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    background: rgb(255,205,205);
+    background: -moz-linear-gradient(180deg, rgba(255,205,205,1) 0%, rgba(130,109,141,1) 30%, rgba(0,10,75,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255,205,205,1) 0%, rgba(130,109,141,1) 30%, rgba(0,10,75,1) 100%);
+    background: linear-gradient(180deg, rgba(255,205,205,1) 0%, rgba(130,109,141,1) 30%, rgba(0,10,75,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcdcd",endColorstr="#000a4b",GradientType=1); 
+}
+
 body {
     font-family: $default-family;
     font-size: 16px;
