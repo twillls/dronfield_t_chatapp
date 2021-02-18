@@ -43,21 +43,27 @@ import Nickname from "./components/TheNicknameComponent.js";
         methods: {
             dispatchMessage(){
                 // debugger;
-                socket.emit("chatmessage", {content: this.message, name: this.username.nickname.name || "Anonymous" });
+                socket.emit("chatmessage", {content: this.message, name: this.nickname || "Anonymous" });
             
                 this.message = "";
             },
 
             changeNickname(){
-                socket.emit("nickname", {name: this.nickname});
-
-                this.nickname = "";
+                // socket.emit("nickname", {name: this.nickname});
+                // debugger;
+                this.nickname = event.target.previousElementSibling.value;
             },
 
-            toggleChangeUsername(target){
-                console.log("Toggle");
+            toggleChangeUsername(){
+                console.log("Opening");
 
                 event.target.nextElementSibling.classList.toggle('show-change-user');
+            },
+
+            hideChangeUsername(){
+                console.log("Closing");
+                // debugger;
+                event.target.parentElement.classList.remove('show-change-user');
             },
         },
 

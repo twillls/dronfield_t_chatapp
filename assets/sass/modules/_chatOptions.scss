@@ -30,12 +30,26 @@
         border: none;
         border-radius: 25px;
         padding: 8px 15px;
-        width: 53%;
+        width: 50%;
         font-weight: 100;
         font-size: 12px;
     }
 
     .change-user-submit { 
+        background: white;
+        border-radius: 15px;
+        padding: 5px 15px;
+        font-weight: 100;
+
+        margin-top: 20px;
+
+        font-family: $default-family;
+        font-weight: 200;
+
+        &:hover { background: pink; }
+    }
+
+    .hide-button{
         background: white;
         border-radius: 15px;
         padding: 5px 15px;
