@@ -1,6 +1,43 @@
 .chat-options{
     background-color: $opaque-white;
     width: 75vw;
-    padding: 2.5%;
+    padding: 5%;
     border-radius: 25px;
+
+    color: white;
+
+    filter: $drop-shadow;
+
+    h2 {font-weight: 100;}
+
+    .change-user-button{ 
+        background: white;
+        padding: 8px 15px;
+        border-radius: 25px;
+        font-size: 12px;
+        
+        margin-top: 20px;
+    }
+
+    .change-user { display: none;}
+
+    .show-change-user { display: block!important; } 
+
+    .change-user-input { 
+        border: none;
+        border-radius: 25px;
+        padding: 8px 15px;
+        width: 53%;
+        font-size: 12px;
+    }
+
+    .change-user-submit { 
+        background: white;
+        border-radius: 15px;
+        padding: 5px 15px;
+
+        margin-top: 20px;
+
+        &:hover { background: pink; }
+    }
 }

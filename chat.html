@@ -11,9 +11,13 @@
         <section class="chat-options">
             <h2>Dreamy Chat</h2>
 
-            <h4>Change Username</h4>
-            <input type="text" placeholder="username">
-            <input type="submit" value="OK">
+            <div class="option-buttons">
+                <button @click.prevent="toggleChangeUsername" class="change-user-button">Change Username</button>
+                <div class="change-user show-change-user">
+                    <input :name="nickname" v-model="nickname" v-on:keyup.enter="changeNickname" class="change-user-input" type="text" placeholder="username" maxlength="30">
+                    <input class="change-user-submit" @click.prevent="changeNickname" type="submit" value="OK">
+                </div>
+            </div>
         </section>
         
 
@@ -23,12 +27,14 @@
                 <newmessage :msg="message" :socketid="socketID"></newmessage>
             </ul>
         </section>
+       
 
-        <section class="message-wrapper">
-            <textarea v-model="message" class="text-message" maxlength="155" name="" id="" cols="" rows="" placeholder="Welcome to Dreamy Chat ~ Start Chatting"></textarea>
-            <input @click.prevent="dispatchMessage" type="submit" value="send">
+        <section class="bottom-wrapper">
+            <div class="message-wrapper">  
+                <textarea v-on:keyup.enter="dispatchMessage" v-model="message" class="text-message"  name="" id="" cols="" rows="1" placeholder="Start Chatting"></textarea>
+                <input @click.prevent="dispatchMessage" type="submit" value="send">
+            </div>
         </section>
-
 
     </main>
     <!-- Socket first... -->

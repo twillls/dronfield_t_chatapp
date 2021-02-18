@@ -1,3 +1,11 @@
+// .is-typing {
+//     position: absolute;
+//     bottom: 40px;
+//     left: 10px;
+//     font-size: 14px;   
+//     font-weight: 100;     
+// }
+
 .message-wrapper{
     position: absolute;
     bottom: 0;
@@ -7,21 +15,29 @@
     justify-content: space-evenly;
 
     textarea {
-        width: 90vw;
+        font-family: $default-family;
+        width: 80vw;
         border: none;
         outline: none;
-        resize:inherit;
+        resize: none;
         overflow: auto;
-        border-radius: 25px;
-        padding: .5rem 1.5rem;
-        background-color: $opaque-white;
+        border-radius: 20px;
+        line-height: 1.5;
 
+        padding: 5px 15px 0 15px;
+
+        background-color: white;
+        font-size: 14px;
+
+        filter: $drop-shadow;
     }
 
     input {
-        padding: 0 1.5rem;
-        border-radius: 25px;
-        background-color: $opaque-white;
+        padding: 0 15px;
+        border-radius: 20px;
+        background-color: white;
         font-size: 12px;
+
+        filter: $drop-shadow;
     }
 }
