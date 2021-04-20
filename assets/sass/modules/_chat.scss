@@ -8,8 +8,10 @@
 
 .message-wrapper{
     position: fixed;
-    bottom: 0;
-    width: 100vw;
+    bottom: 1%;
+    width: 100%;
+
+    padding: 0 1%;
 
     display: flex;
     justify-content: space-evenly;
