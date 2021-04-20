@@ -19,22 +19,35 @@
         padding: 8px 15px;
         border-radius: 25px;
         font-size: 12px;
-        font-weight: 200;
+        font-weight: 100;
         
         margin-top: 20px;
+        &:hover {
+            @include button-hover;
+        }
     }
 
-    .change-user { display: none;}
+    .change-user { display: none; }
 
     .show-change-user { display: block!important; } 
 
     .change-user-input { 
-        border: none;
+        border: transparent;
         border-radius: 25px;
         padding: 8px 15px;
         width: 50%;
         font-weight: 100;
         font-size: 12px;
+        font-family: $default-family;
+
+        &:focus {
+            border-radius: 25px;
+            border: 1px solid rgb(148,187,233);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
     }
 
     .change-user-submit { 
@@ -48,7 +61,7 @@
         font-family: $default-family;
         font-weight: 200;
 
-        &:hover { background: pink; }
+        &:hover { @include button-hover; }
     }
 
     .hide-button{
@@ -62,6 +75,6 @@
         font-family: $default-family;
         font-weight: 200;
 
-        &:hover { background: pink; }
+        &:hover { @include button-hover; }
     }
 }

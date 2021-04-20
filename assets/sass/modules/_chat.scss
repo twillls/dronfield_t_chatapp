@@ -19,14 +19,14 @@
     textarea {
         font-family: $default-family;
         width: 80vw;
-        border: none;
+        border: 1px solid transparent;
         outline: none;
         resize: none;
         overflow: auto;
         border-radius: 20px;
         line-height: 1.5;
 
-        padding: 5px 15px 0 15px;
+        padding: 5px 15px 5px 15px;
 
         background-color: white;
         font-size: 14px;
@@ -34,6 +34,15 @@
         filter: $drop-shadow;
 
         flex-grow: 1;
+
+        &:focus {
+            border-radius: 25px;
+            border: 1px solid rgb(253, 193, 202);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
     }
 
     input {
@@ -44,5 +53,9 @@
         font-family: $default-family;
 
         filter: $drop-shadow;
+
+        &:hover {
+            @include button-hover;
+        }
     }
 }

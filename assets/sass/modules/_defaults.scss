@@ -20,12 +20,9 @@
     background: linear-gradient(180deg, rgba(238,174,202,1) 0%, rgba(218,177,209,1) 46%, rgba(148,187,233,1) 100%); 
 }
 
-body {
+body, p, a, button, input  {
     font-family: $default-family;
     font-size: 16px;
-
-    background: rgb(255,205,205);
-    
 }
 
 a { 

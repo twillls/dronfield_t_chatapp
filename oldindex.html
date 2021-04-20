@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h1 class="hidden">My Chat App</h1>
+    <h4>Choose a username to join the chat</h4>
+    <h6>..or not, to stealth post</h6>
+
+    <input type="text" placeholder="username">
+    <input type="password" placeholder="password">
+
+    <input type="submit" value="JOIN">
+
+    <!-- temp hack to bypass login -->
+    <a href="/chat">go to chat page</a>
+
+    
+    <!-- This is our own file, defer it to ensure it runs last -->
+    <script defer src="scripts/main.js"></script>
+</body>
+</html>
