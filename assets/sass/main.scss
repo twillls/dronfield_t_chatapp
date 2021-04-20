@@ -1,4 +1,8 @@
+// import mixins and vars
+@import 'modules/mixins';
 @import 'modules/vars';
+
+// import sass modules
 @import 'modules/defaults';
 @import 'modules/title';
 @import 'modules/chatOptions';
