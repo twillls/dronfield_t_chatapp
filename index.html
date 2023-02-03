@@ -3,46 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dreamy Chat</title>
+    <title>Coffee Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-    <section class="background"></section>
-    <main id="app">
-        <section class="chat-options">
-            <div class="title">
-                <img src="images/clouds.gif" alt="cloud with twinkling stars">
-                <h2>Dreamy Chat</h2>
-                <img src="images/clouds.gif" alt="cloud with twinkling stars">
-            </div>
-
-            <div class="option-buttons">
-                <button @click.prevent="toggleChangeUsername" class="change-user-button">Change Username</button>
-                
-                <div class="change-user">
-                    <input :v-model="nickname" class="change-user-input" type="text" placeholder="username" maxlength="30">
-                    <input class="change-user-submit" @click.prevent="changeNickname" type="submit" value="OK">
-                    <button @click.prevent="hideChangeUsername" class="hide-button">HIDE</button>
+<body class="body container-sm">
+    <main id="app" class="main">
+        <div class="main-wrapper">
+            <section class="header">
+                <div class="title">
+                    <h2>Chatting with... </h2>
                 </div>
-            </div>
-        </section>
-        
-
-        <!-- Vue custom message component goes here --> 
-        <section class="messages">
-            <ul id="messages" v-for="message in messages">
-                <newmessage :msg="message" :socketid="socketID"></newmessage>
-            </ul>
-        </section>
-       
-
-        <section class="bottom-wrapper">
-            <div class="message-wrapper">  
-                <textarea v-on:keyup.enter="dispatchMessage" v-model="message" class="text-message"  name="" id="" cols="" rows="1" placeholder="Start Chatting"></textarea>
-                <input @click.prevent="dispatchMessage" type="submit" value="send">
-            </div>
-        </section>
-
+    
+                <div class="option-buttons">
+                    <button @click.prevent="toggleChangeUsername" class="change-user-button">Change Username</button>
+                    
+                    <div class="change-user">
+                        <input :v-model="nickname" class="change-user-input" type="text" placeholder="username" maxlength="30">
+                        <input class="change-user-submit" @click.prevent="changeNickname" type="submit" value="OK">
+                        <button @click.prevent="hideChangeUsername" class="hide-button">HIDE</button>
+                    </div>
+                </div>
+            </section>
+            
+    
+            <!-- Vue custom message component goes here --> 
+            <section class="messages">
+                <ul id="messages" v-for="message in messages">
+                    <newmessage :msg="message" :socketid="socketID"></newmessage>
+                </ul>
+            </section>
+           
+    
+            <section class="bottom-wrapper">
+                <div class="message-wrapper">  
+                    <span v-on:keyup.enter="dispatchMessage" v-model="message" class="text-message" role="textbox" contenteditable placeholder="Start Chatting"></span>
+                    <input @click.prevent="dispatchMessage" type="submit" value="send">
+                </div>
+            </section>
+        </div>
     </main>
     <!-- Socket first... -->
     <script src="/socket.io/socket.io.js"></script>

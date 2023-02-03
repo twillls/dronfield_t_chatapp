@@ -7,26 +7,20 @@
 // }
 
 .message-wrapper{
-    position: fixed;
-    bottom: 1%;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-
-    padding: 0 1%;
-
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
-    textarea {
+    span {
         font-family: $default-family;
-        width: 80vw;
-        border: 1px solid transparent;
-        outline: none;
-        resize: none;
+        border: 1px solid $dark-brew;
         overflow: auto;
-        border-radius: 20px;
+        border-radius: 5px;
         line-height: 1.5;
 
-        padding: 5px 15px 5px 15px;
+        padding: 8px 15px;
 
         background-color: white;
         font-size: 14px;
@@ -34,25 +28,13 @@
         filter: $drop-shadow;
 
         flex-grow: 1;
-
-        &:focus {
-            border-radius: 25px;
-            border: 1px solid rgb(253, 193, 202);
-        }
-
-        &:focus-visible {
-            outline: none;
-        }
     }
 
     input {
         padding: 0 15px;
-        border-radius: 20px;
+        border-radius: 5px;
         background-color: white;
         font-size: 12px;
-        font-family: $default-family;
-
-        filter: $drop-shadow;
 
         &:hover {
             @include button-hover;

@@ -3,10 +3,6 @@
 @import 'modules/vars';
 
 // import sass modules
-@import 'modules/defaults';
-@import 'modules/title';
-@import 'modules/chatOptions';
-@import 'modules/chat';
-
-// import mq here
-@import 'modules/mediaqueries';
+@import 'modules/header';
+@import 'modules/body';
+@import 'modules/messages';

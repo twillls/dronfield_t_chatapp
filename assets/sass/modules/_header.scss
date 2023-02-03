@@ -1,27 +1,23 @@
-.chat-options{
-    background-color: $opaque-white;
-    width: 75vw;
-    padding: 5%;
-    border-radius: 25px;
-
-    color: rgb(71, 71, 71);
-
-    filter: $drop-shadow;
-
-    margin: 2.5% 0 0 2.5%;
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: $medium-roast;
+    padding: 30px 0;
 
     h2 {
         font-weight: 100;
     }
 
-    .change-user-button{ 
+    .change-user-button { 
         background: white;
         padding: 8px 15px;
         border-radius: 25px;
         font-size: 12px;
         font-weight: 100;
-        
-        margin-top: 20px;
+
         &:hover {
             @include button-hover;
         }
@@ -56,15 +52,13 @@
         padding: 5px 15px;
         font-weight: 100;
 
-        margin-top: 20px;
-
         font-family: $default-family;
         font-weight: 200;
 
         &:hover { @include button-hover; }
     }
 
-    .hide-button{
+    .hide-button {
         background: white;
         border-radius: 15px;
         padding: 5px 15px;
