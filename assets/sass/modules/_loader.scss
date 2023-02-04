@@ -1,0 +1,41 @@
+.loader-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: $light-roast;
+
+    animation-name: loading;
+    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+    .coffee-bean {
+        animation-name: pulse;
+        animation-duration: 0.75s;
+        animation-timing-function: ease-out; 
+        animation-delay: 0s;
+        animation-direction: alternate;
+        animation-iteration-count: 7;
+        animation-fill-mode: none;
+        animation-play-state: running;
+    }
+}
+
+@keyframes loading {
+    from {
+      right: 0;
+    }
+
+    to {
+      right: -100vw;
+    }
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(.2);
+    }
+}

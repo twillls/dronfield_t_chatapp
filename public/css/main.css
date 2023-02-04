@@ -136,10 +136,6 @@ a:hover {
   height: 95%;
   position: relative;
   overflow: hidden;
-  border: 1px solid #362f2d;
-  border-radius: 15px;
-  box-shadow: 0px 0px 25px #362f2d;
-  margin: auto;
 }
 .main .main-wrapper {
   height: 100%;
@@ -174,6 +170,44 @@ a:hover {
   background-color: rgb(253, 193, 202);
   color: white;
   transition-duration: 0.2s;
+}
+
+.loader-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: #ebdfd1;
+  animation-name: loading;
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.loader-wrapper .coffee-bean {
+  animation-name: pulse;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: 7;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes loading {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100vw;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.2);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

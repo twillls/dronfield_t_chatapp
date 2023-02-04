@@ -2,10 +2,6 @@ import ChatMessage from './components/TheMessageComponent.js';
 import Nickname from './components/TheNicknameComponent.js';
 
 (() => {
-    function loadingScreen(){
-        console.log('Launching!');
-    }
-
     const socket = io();
 
     // messenger service event handling > INCOMING from the manager
@@ -25,8 +21,6 @@ import Nickname from './components/TheNicknameComponent.js';
         // push new nickname
         vm.username=nickname;
     }
-
-    loadingScreen();
 
     const vm = new Vue({
         data: {

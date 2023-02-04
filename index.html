@@ -25,7 +25,6 @@
                     </div>
                 </div>
             </section>
-            
     
             <!-- Vue custom message component goes here --> 
             <section class="messages">
@@ -33,16 +32,27 @@
                     <newmessage :msg="message" :socketid="socketID"></newmessage>
                 </ul>
             </section>
-           
     
             <section class="bottom-wrapper">
                 <div class="message-wrapper">  
-                    <span v-on:keyup.enter="dispatchMessage" v-model="message" class="text-message" role="textbox" contenteditable placeholder="Start Chatting"></span>
+                    <textarea v-on:keyup.enter="dispatchMessage" v-model="message" class="text-message" role="textbox" contenteditable placeholder="Start Chatting"></textarea>
                     <input @click.prevent="dispatchMessage" type="submit" value="send">
                 </div>
             </section>
         </div>
     </main>
+    <div class="loader-wrapper">
+        <img class="coffee-bean" src="images/coffee-bean.png" />
+        <div class="line line-1">
+            <div class="wave wave1"></div>
+        </div>
+        <div class="line line-2">
+            <div class="wave wave2"></div>
+        </div>
+        <div class="line line-3">
+            <div class="wave wave3"></div>
+        </div>
+    </div>
     <!-- Socket first... -->
     <script src="/socket.io/socket.io.js"></script>
     <!-- Then Vue... --> 
