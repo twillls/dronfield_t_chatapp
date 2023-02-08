@@ -285,7 +285,7 @@ a:hover {
   width: 100vw;
   height: 100vh;
   background-color: #ebdfd1;
-  animation-name: slideDown;
+  animation-name: slideOver;
   animation-delay: 3s;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -321,9 +321,9 @@ a:hover {
   animation-delay: 2s;
 }
 
-@keyframes slideDown {
+@keyframes slideOver {
   100% {
-    transform: translateY(100vh);
+    transform: translateX(100vw);
   }
 }
 @keyframes blink {
