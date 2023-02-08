@@ -50,6 +50,12 @@
     filter: $drop-shadow;
 
     &:not(.my-message) {
+        margin-left: 30px;
+
+        @media (min-width: 900px) {
+            margin-left: 60px;
+        }
+
         h4,
         p {
             color: $blonde-roast;
@@ -62,4 +68,9 @@
     color: $dark-brew;
     float: right;
     text-align: right;
+    margin-right: 30px;
+
+    @media (min-width: 900px) {
+        margin-right: 60px;
+    }
 }
