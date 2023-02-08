@@ -1,9 +1,9 @@
-# Dreamy Chat App
+# Coffee Chat App
 
 ## Description
-Join Dreamy Chat and put time on the shelf. It's night time all the time for all those late night coders and early risers.
+Join Coffee Chat and put on a fresh brew. It's always the right time for some developer fuel.
 
-Join dreamy chat, start chatting, and relax on a comfy cloud.
+Join coffee chat, start chatting, and settle in with your cup of joe.
 
 ## Dependencies
 ### Development
@@ -15,7 +15,7 @@ Join dreamy chat, start chatting, and relax on a comfy cloud.
 - socket.io
 
 ## Installation
-Visit the live heroku site at: https://dronfield-taylor-chatapp.herokuapp.com/
+Visit the live app on Glitch at https://glitch.com/~taylors-coffee-chat-app
 
 OR
 
@@ -27,4 +27,4 @@ OR
 6. Start chatting!
 
 ## Author
-Taylor Dronfield [@tdronfield]
+Taylor Wills [@twillls]
