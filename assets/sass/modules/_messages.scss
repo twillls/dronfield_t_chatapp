@@ -43,19 +43,23 @@
 .new-message {
     padding: 10px;
     background-color: $dark-brew;
-    opacity: 0.7;
-    color: white;
     border-radius: 8px;
     float: left;
     clear: both;
     margin: 10px;
     filter: $drop-shadow;
+
+    &:not(.my-message) {
+        h4,
+        p {
+            color: $blonde-roast;
+        }
+    }
 }
 
 .my-message {
-    background-color: white;
+    background-color: $blonde-roast;
     color: $dark-brew;
-    opacity: 0.7; 
     float: right;
     text-align: right;
 }
