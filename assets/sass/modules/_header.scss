@@ -1,74 +1,91 @@
 .header {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: $medium-roast;
-    padding: 30px 0;
+    height: fit-content;
+    background-color: white;
+    background: linear-gradient(to bottom, white, $house-blend);
+    padding: 30px;
+    transition: height .25s ease-in-out;
 
-    h2 {
-        font-weight: 100;
+    @media (min-width: 900px) {
+        padding: 60px;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 10px;
+
+        h2 {
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
     }
 
     .change-user-button { 
-        background: white;
-        padding: 8px 15px;
-        border-radius: 25px;
-        font-size: 12px;
-        font-weight: 100;
-
-        &:hover {
-            @include button-hover;
-        }
+        @include button;
+        margin-bottom: 10px;
     }
 
     .change-user { display: none; }
 
-    .show-change-user { display: block!important; } 
+    .show-change-user { display: flex !important; } 
 
     .change-user-input { 
-        border: transparent;
-        border-radius: 25px;
-        padding: 8px 15px;
-        width: 50%;
-        font-weight: 100;
-        font-size: 12px;
-        font-family: $default-family;
-
-        &:focus {
-            border-radius: 25px;
-            border: 1px solid rgb(148,187,233);
-        }
-
-        &:focus-visible {
-            outline: none;
-        }
+        @include button;
+        background-color: $blonde-roast;
+        outline: none;
     }
 
     .change-user-submit { 
-        background: white;
-        border-radius: 15px;
-        padding: 5px 15px;
-        font-weight: 100;
-
-        font-family: $default-family;
-        font-weight: 200;
-
-        &:hover { @include button-hover; }
+        @include button;
     }
 
     .hide-button {
-        background: white;
-        border-radius: 15px;
-        padding: 5px 15px;
-        font-weight: 100;
+        @include button;
+    }
 
-        margin-top: 20px;
+    .modal {
+        background-color: rgba(54, 47, 45, 0.7);
 
-        font-family: $default-family;
-        font-weight: 200;
+        .modal-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: auto;
+            background-color: $blonde-roast;
+            padding: 30px;
+            border-radius: 5px;
 
-        &:hover { @include button-hover; }
+            @media (min-width: 900px) {
+                width: 60%;
+                padding: 60px;
+            }
+
+            .title {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .nickname-input {
+                width: 100%;
+                margin-bottom: 10px;
+
+                @media (min-width: 900px) {
+                    width: unset;
+                    margin-bottom: 0;
+                    margin-right: 10px;
+                }
+            }
+
+            .nickname-submit {
+                margin-right: 5px;
+            }
+        }
     }
 }

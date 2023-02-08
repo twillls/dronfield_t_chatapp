@@ -1,5 +1,21 @@
-@mixin button-hover {
-    background-color: rgb(253, 193, 202);
-    color: white;
-    transition-duration: 0.2s;
+@mixin button {
+    background-color: $dark-brew;
+    border: 1px solid $dark-brew;
+    border-radius: 5px;
+    color: $blonde-roast;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 8px 15px;
+
+    transition: background-color .25s ease-in-out;
+    -webkit-transition: background-color .25s ease-in-out;
+    -moz-transition: background-color .25s ease-in-out;
+    -o-transition: background-color .25s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: $blonde-roast;
+      color: $dark-brew;
+    }
 }

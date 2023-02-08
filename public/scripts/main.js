@@ -50,7 +50,7 @@ import Nickname from './components/TheNicknameComponent.js';
             },
 
             hideChangeUsername(){
-                event.target.parentElement.classList.remove('show-change-user');
+                event.target.parentElement.parentElement.classList.remove('show-change-user');
             },
         },
 

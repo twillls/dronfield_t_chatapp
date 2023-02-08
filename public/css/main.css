@@ -1,76 +1,148 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 .header {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #b8ab93;
-  padding: 30px 0;
+  height: fit-content;
+  background-color: white;
+  background: linear-gradient(to bottom, white, #b8ab93);
+  padding: 30px;
+  transition: height 0.25s ease-in-out;
 }
-.header h2 {
-  font-weight: 100;
+@media (min-width: 900px) {
+  .header {
+    padding: 60px;
+  }
+}
+.header .title {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+.header .title h2 {
+  margin-right: 10px;
+  margin-bottom: 0;
 }
 .header .change-user-button {
-  background: white;
+  background-color: #362f2d;
+  border: 1px solid #362f2d;
+  border-radius: 5px;
+  color: #ebdfd1;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
   padding: 8px 15px;
-  border-radius: 25px;
-  font-size: 12px;
-  font-weight: 100;
+  transition: background-color 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  -moz-transition: background-color 0.25s ease-in-out;
+  -o-transition: background-color 0.25s ease-in-out;
+  margin-bottom: 10px;
 }
-.header .change-user-button:hover {
-  background-color: rgb(253, 193, 202);
-  color: white;
-  transition-duration: 0.2s;
+.header .change-user-button:hover, .header .change-user-button:focus {
+  background-color: #ebdfd1;
+  color: #362f2d;
 }
 .header .change-user {
   display: none;
 }
 .header .show-change-user {
-  display: block !important;
+  display: flex !important;
 }
 .header .change-user-input {
-  border: transparent;
-  border-radius: 25px;
+  background-color: #362f2d;
+  border: 1px solid #362f2d;
+  border-radius: 5px;
+  color: #ebdfd1;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
   padding: 8px 15px;
-  width: 50%;
-  font-weight: 100;
-  font-size: 12px;
-  font-family: "Montserrat", arial, helvetica, sans-serif;
-}
-.header .change-user-input:focus {
-  border-radius: 25px;
-  border: 1px solid rgb(148, 187, 233);
-}
-.header .change-user-input:focus-visible {
+  transition: background-color 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  -moz-transition: background-color 0.25s ease-in-out;
+  -o-transition: background-color 0.25s ease-in-out;
+  background-color: #ebdfd1;
   outline: none;
 }
-.header .change-user-submit {
-  background: white;
-  border-radius: 15px;
-  padding: 5px 15px;
-  font-weight: 100;
-  font-family: "Montserrat", arial, helvetica, sans-serif;
-  font-weight: 200;
+.header .change-user-input:hover, .header .change-user-input:focus {
+  background-color: #ebdfd1;
+  color: #362f2d;
 }
-.header .change-user-submit:hover {
-  background-color: rgb(253, 193, 202);
-  color: white;
-  transition-duration: 0.2s;
+.header .change-user-submit {
+  background-color: #362f2d;
+  border: 1px solid #362f2d;
+  border-radius: 5px;
+  color: #ebdfd1;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  padding: 8px 15px;
+  transition: background-color 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  -moz-transition: background-color 0.25s ease-in-out;
+  -o-transition: background-color 0.25s ease-in-out;
+}
+.header .change-user-submit:hover, .header .change-user-submit:focus {
+  background-color: #ebdfd1;
+  color: #362f2d;
 }
 .header .hide-button {
-  background: white;
-  border-radius: 15px;
-  padding: 5px 15px;
-  font-weight: 100;
-  margin-top: 20px;
-  font-family: "Montserrat", arial, helvetica, sans-serif;
-  font-weight: 200;
+  background-color: #362f2d;
+  border: 1px solid #362f2d;
+  border-radius: 5px;
+  color: #ebdfd1;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  padding: 8px 15px;
+  transition: background-color 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  -moz-transition: background-color 0.25s ease-in-out;
+  -o-transition: background-color 0.25s ease-in-out;
 }
-.header .hide-button:hover {
-  background-color: rgb(253, 193, 202);
-  color: white;
-  transition-duration: 0.2s;
+.header .hide-button:hover, .header .hide-button:focus {
+  background-color: #ebdfd1;
+  color: #362f2d;
+}
+.header .modal {
+  background-color: rgba(54, 47, 45, 0.7);
+}
+.header .modal .modal-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  background-color: #ebdfd1;
+  padding: 30px;
+  border-radius: 5px;
+}
+@media (min-width: 900px) {
+  .header .modal .modal-container {
+    width: 60%;
+    padding: 60px;
+  }
+}
+.header .modal .modal-container .title {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.header .modal .modal-container .nickname-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+@media (min-width: 900px) {
+  .header .modal .modal-container .nickname-input {
+    width: unset;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+.header .modal .modal-container .nickname-submit {
+  margin-right: 5px;
 }
 
 * {
@@ -81,8 +153,16 @@
 }
 
 body, p, a, button, input {
-  font-family: "Montserrat", arial, helvetica, sans-serif;
+  color: #362f2d;
+  font-family: "Bitter", serif;
+  font-weight: 300;
   font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #362f2d;
+  font-weight: 600;
+  font-style: italic;
 }
 
 a {
@@ -94,29 +174,6 @@ a:hover {
   cursor: pointer;
 }
 
-.new-message {
-  padding: 10px;
-  background-color: lightblue;
-  color: #212121;
-  border-radius: 8px;
-  float: left;
-  clear: both;
-  margin: 10px;
-  filter: drop-shadow(-3px 3px 5px rgba(0, 0, 0, 0.2));
-  font-family: "Montserrat", arial, helvetica, sans-serif;
-  font-weight: 200;
-}
-.new-message h4 {
-  font-family: "Montserrat", arial, helvetica, sans-serif;
-  font-weight: 100;
-}
-
-.my-message {
-  background-color: rgb(253, 193, 202);
-  float: right;
-  text-align: right;
-}
-
 .hidden {
   display: none;
 }
@@ -125,88 +182,153 @@ a:hover {
   display: flex;
   align-items: center;
   height: 100vh;
-  background: #ebdfd1;
-  background: -moz-linear-gradient(0deg, rgb(184, 171, 147) 0%, rgb(255, 255, 255));
-  background: -webkit-linear-gradient(0deg, rgb(184, 171, 147) 0%, rgb(255, 255, 255));
-  background: linear-gradient(0deg, rgb(184, 171, 147) 0%, rgb(255, 255, 255));
+  background: #b8ab93;
+  overflow-x: hidden;
+}
+.body::-webkit-scrollbar {
+  width: 20px;
+  background-color: #362f2d;
+}
+.body::-webkit-scrollbar-thumb {
+  background-color: #ebdfd1;
+  border: 1px solid #362f2d;
 }
 
 .main {
   width: 100%;
-  height: 95%;
+  height: 100%;
   position: relative;
-  overflow: hidden;
 }
 .main .main-wrapper {
   height: 100%;
 }
 
 .message-wrapper {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  background-color: #b8ab93;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 10px 30px;
 }
-.message-wrapper span {
-  font-family: "Montserrat", arial, helvetica, sans-serif;
+@media (min-width: 900px) {
+  .message-wrapper {
+    padding: 10px 60px;
+  }
+}
+.message-wrapper .text-message {
+  flex: 1 1 auto;
+  line-height: 1.5;
+  font-size: 14px;
+  background-color: #ebdfd1;
   border: 1px solid #362f2d;
-  overflow: auto;
   border-radius: 5px;
+  overflow: auto;
+  margin-right: 10px;
+  padding: 8px 15px;
+  outline: none;
+  resize: none;
+}
+.message-wrapper .text-message::-webkit-scrollbar {
+  width: 20px;
+  background-color: #362f2d;
+}
+.message-wrapper .text-message::-webkit-scrollbar-thumb {
+  background-color: #ebdfd1;
+  border: 1px solid #362f2d;
+}
+.message-wrapper .send-button {
+  background-color: #362f2d;
+  border: 1px solid #362f2d;
+  border-radius: 5px;
+  color: #ebdfd1;
+  font-size: 16px;
+  font-weight: 300;
   line-height: 1.5;
   padding: 8px 15px;
-  background-color: white;
-  font-size: 14px;
-  filter: drop-shadow(-3px 3px 5px rgba(0, 0, 0, 0.2));
-  flex-grow: 1;
+  transition: background-color 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  -moz-transition: background-color 0.25s ease-in-out;
+  -o-transition: background-color 0.25s ease-in-out;
 }
-.message-wrapper input {
-  padding: 0 15px;
-  border-radius: 5px;
-  background-color: white;
-  font-size: 12px;
+.message-wrapper .send-button:hover, .message-wrapper .send-button:focus {
+  background-color: #ebdfd1;
+  color: #362f2d;
 }
-.message-wrapper input:hover {
-  background-color: rgb(253, 193, 202);
+
+.new-message {
+  padding: 10px;
+  background-color: #362f2d;
+  opacity: 0.7;
   color: white;
-  transition-duration: 0.2s;
+  border-radius: 8px;
+  float: left;
+  clear: both;
+  margin: 10px;
+  filter: drop-shadow(-3px 3px 5px rgba(0, 0, 0, 0.2));
+}
+
+.my-message {
+  background-color: white;
+  color: #362f2d;
+  opacity: 0.7;
+  float: right;
+  text-align: right;
 }
 
 .loader-wrapper {
+  z-index: 2;
   position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
   background-color: #ebdfd1;
-  animation-name: loading;
+  animation-name: slideDown;
   animation-delay: 3s;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
+.loader-wrapper .inner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .loader-wrapper .coffee-bean {
-  animation-name: pulse;
-  animation-duration: 0.75s;
-  animation-timing-function: ease-out;
-  animation-delay: 0s;
-  animation-direction: alternate;
-  animation-iteration-count: 7;
-  animation-fill-mode: none;
-  animation-play-state: running;
+  width: auto;
+  width: 40%;
+}
+.loader-wrapper .loading {
+  margin-top: 5%;
+  width: 40%;
+}
+.loader-wrapper .dot {
+  opacity: 0;
+  animation: blink 1s forwards;
+}
+.loader-wrapper .dot2 {
+  animation-delay: 1s;
+}
+.loader-wrapper .dot3 {
+  animation-delay: 2s;
 }
 
-@keyframes loading {
-  from {
-    right: 0;
-  }
-  to {
-    right: -100vw;
+@keyframes slideDown {
+  100% {
+    transform: translateY(100vh);
   }
 }
-@keyframes pulse {
-  0% {
-    transform: scale(0.2);
+@keyframes blink {
+  100% {
+    opacity: 1;
   }
 }
 

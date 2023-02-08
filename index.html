@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Chat</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body class="body container-sm">
+<body class="body">
     <main id="app" class="main">
         <div class="main-wrapper">
             <section class="header">
                 <div class="title">
-                    <h2>Chatting with... </h2>
+                    <h2>Coffee Chat</h2>
+                    <i class="fas fa-mug-hot"></i>
                 </div>
     
                 <div class="option-buttons">
                     <button @click.prevent="toggleChangeUsername" class="change-user-button">Change Username</button>
-                    
-                    <div class="change-user">
-                        <input :v-model="nickname" class="change-user-input" type="text" placeholder="username" maxlength="30">
-                        <input class="change-user-submit" @click.prevent="changeNickname" type="submit" value="OK">
-                        <button @click.prevent="hideChangeUsername" class="hide-button">HIDE</button>
+                    <div class="change-user modal">
+                        <div class="modal-container">
+                            <h2 class="title">Change Username</h2>
+                            <input class="change-user-input nickname-input" :v-model="nickname" type="text" placeholder="username" maxlength="30">
+                            <input class="change-user-submit nickname-submit" @click.prevent="changeNickname" type="submit" value="Change">
+                            <button class="hide-button" @click.prevent="hideChangeUsername">Close</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -33,24 +38,31 @@
                 </ul>
             </section>
     
-            <section class="bottom-wrapper">
-                <div class="message-wrapper">  
-                    <textarea v-on:keyup.enter="dispatchMessage" v-model="message" class="text-message" role="textbox" contenteditable placeholder="Start Chatting"></textarea>
-                    <input @click.prevent="dispatchMessage" type="submit" value="send">
-                </div>
+            <section class="message-wrapper">
+                <textarea class="text-message" v-on:keyup.enter="dispatchMessage" v-model="message" role="textbox" contenteditable placeholder="Start Chatting"></textarea>
+                <input  class="send-button" @click.prevent="dispatchMessage" type="submit" value="Send">
             </section>
         </div>
     </main>
     <div class="loader-wrapper">
-        <img class="coffee-bean" src="images/coffee-bean.png" />
-        <div class="line line-1">
-            <div class="wave wave1"></div>
-        </div>
-        <div class="line line-2">
-            <div class="wave wave2"></div>
-        </div>
-        <div class="line line-3">
-            <div class="wave wave3"></div>
+        <div class="inner-container">
+            <img class="coffee-bean" src="images/coffee-bean.svg" />
+            <svg class="loading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 218.83 36.43">
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path d="M2.3,37.51V35.64H6.19V12.36H2.3V10.49H12.91v1.87H9V35.64H21.5v-8h2.26v9.89Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path d="M36.43,38.09a10.68,10.68,0,0,1-5.25-1.27,9.27,9.27,0,0,1-3.58-3.53A10.49,10.49,0,0,1,26.3,28a10.22,10.22,0,0,1,1.3-5.21,9,9,0,0,1,3.58-3.46,11,11,0,0,1,5.25-1.22,11.27,11.27,0,0,1,5.33,1.22,8.89,8.89,0,0,1,3.6,3.46A10.22,10.22,0,0,1,46.66,28a10.48,10.48,0,0,1-1.3,5.25,9.13,9.13,0,0,1-3.6,3.56A10.94,10.94,0,0,1,36.43,38.09Zm0-2a7.44,7.44,0,0,0,4-1,7.2,7.2,0,0,0,2.67-2.83A8.8,8.8,0,0,0,44,28a8.54,8.54,0,0,0-1-4.13,7,7,0,0,0-2.67-2.76,7.71,7.71,0,0,0-4-1,7.52,7.52,0,0,0-3.89,1,7,7,0,0,0-2.64,2.76,8.54,8.54,0,0,0-1,4.13,8.8,8.8,0,0,0,1,4.2,7.13,7.13,0,0,0,6.53,3.86Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path d="M56.26,38a6.68,6.68,0,0,1-4.66-1.61,5.2,5.2,0,0,1-1.78-4,5,5,0,0,1,3.6-5.18A11.6,11.6,0,0,1,57,26.71a24.28,24.28,0,0,1,3.55.27q1.81.25,3.6.69L63,27.91V25a4.73,4.73,0,0,0-1.36-3.74,5.25,5.25,0,0,0-3.58-1.2,13.11,13.11,0,0,0-3.24.45,17.44,17.44,0,0,0-3.29,1.23L50.78,20a14.35,14.35,0,0,1,3.77-1.39A16.59,16.59,0,0,1,58,18.17a9.14,9.14,0,0,1,4.35.89,5.6,5.6,0,0,1,2.42,2.37,7,7,0,0,1,.77,3.27V35.64h3v1.87H63.41L63.07,35h1a18.27,18.27,0,0,1-3.91,2.28A10.5,10.5,0,0,1,56.26,38Zm.33-1.82a9.34,9.34,0,0,0,3.55-.72,21,21,0,0,0,4-2.26L63,34.49v-6l.92.67a26,26,0,0,0-3.32-.67,25.4,25.4,0,0,0-3.5-.24,6.41,6.41,0,0,0-3.31.86,3.36,3.36,0,0,0-1.49,3.17,3.82,3.82,0,0,0,1.1,2.73A4.2,4.2,0,0,0,56.59,36.22Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path d="M80.74,38a10.09,10.09,0,0,1-4.95-1.22,9.28,9.28,0,0,1-3.53-3.48,10.3,10.3,0,0,1-1.32-5.28,10.39,10.39,0,0,1,1.28-5.31,8.91,8.91,0,0,1,3.43-3.38,9.8,9.8,0,0,1,4.85-1.2,11.61,11.61,0,0,1,4.24.81,9,9,0,0,1,3.48,2.36l-1-.1V11.88H83.9V10h5.86V35.64h3.07v1.87H87.17V35l1-.1a11.08,11.08,0,0,1-3.28,2.26A10.14,10.14,0,0,1,80.74,38Zm.48-2a8.9,8.9,0,0,0,3.86-.86A12.12,12.12,0,0,0,88.27,33l-1.1,1.49V21.67l1.1,1.63A10.32,10.32,0,0,0,84.82,21a10.2,10.2,0,0,0-3.89-.81,7.19,7.19,0,0,0-3.77,1,6.78,6.78,0,0,0-2.59,2.81,9.37,9.37,0,0,0-.94,4.37,8,8,0,0,0,1,4.12,7.14,7.14,0,0,0,2.71,2.69A7.77,7.77,0,0,0,81.22,36.07Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path d="M94.8,37.51V35.64h3.89V20.52H94.85V18.65h6.38v17H105v1.87Zm4.75-23.33a2,2,0,0,1-1.44-.55,1.83,1.83,0,0,1-.57-1.37,1.75,1.75,0,0,1,.57-1.34,2.08,2.08,0,0,1,1.44-.53,2,2,0,0,1,1.44.53,1.72,1.72,0,0,1,.58,1.34,1.8,1.8,0,0,1-.58,1.37A2,2,0,0,1,99.55,14.18Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path d="M107,37.51V35.64h3.89V20.52H107V18.65h6.38v2.49l-.91.1A24.32,24.32,0,0,1,116.59,19a10.86,10.86,0,0,1,4.18-.86,6.06,6.06,0,0,1,4.29,1.58,5.85,5.85,0,0,1,1.71,4.51V35.64h3.55v1.87h-9.7V35.64h3.56V24.46a4.36,4.36,0,0,0-1.08-3.15,3.92,3.92,0,0,0-3-1.13,9.74,9.74,0,0,0-3.67.8,26.13,26.13,0,0,0-4,2.08l1-1.15V35.64h3.7v1.87Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path d="M141.65,46.44a19.18,19.18,0,0,1-3.36-.31c-1.19-.21-2.37-.47-3.56-.79l.48-2.07a33.82,33.82,0,0,0,3.44.82,17,17,0,0,0,2.95.29,7.19,7.19,0,0,0,5-1.59,5.94,5.94,0,0,0,1.73-4.61v-3.5l1-.34a9.19,9.19,0,0,1-3.49,2.43,10.89,10.89,0,0,1-4.19.89,10.3,10.3,0,0,1-5-1.2,9,9,0,0,1-3.5-3.39,9.84,9.84,0,0,1-1.3-5.16,10.3,10.3,0,0,1,1.25-5.23,8.48,8.48,0,0,1,3.41-3.31,10.13,10.13,0,0,1,4.85-1.15,11.65,11.65,0,0,1,4.37.91,8.77,8.77,0,0,1,3.5,2.4l-.91-.29V18.65h5.8v1.87H151V37.94a8.93,8.93,0,0,1-1.18,4.85,6.94,6.94,0,0,1-3.26,2.76A12.41,12.41,0,0,1,141.65,46.44Zm.48-10.7a9.81,9.81,0,0,0,3.91-.89,9.64,9.64,0,0,0,3.38-2.38l-1,1.63V21.91l1.1,1.39a12.43,12.43,0,0,0-3.65-2.3,10.54,10.54,0,0,0-4.12-.91,6.65,6.65,0,0,0-6.2,3.74,9.38,9.38,0,0,0-.91,4.27,8,8,0,0,0,1,4.06,6.8,6.8,0,0,0,2.68,2.64A8,8,0,0,0,142.13,35.74Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path class="dot dot1" d="M171,37.51V33.86h3.55v3.65Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path class="dot dot2" d="M194.3,37.51V33.86h3.55v3.65Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                        <path class="dot dot3" d="M217.58,37.51V33.86h3.55v3.65Z" transform="translate(-2.3 -10.01)" style="fill:#362f2d"/>
+                    </g>
+                </g>
+            </svg>
         </div>
     </div>
     <!-- Socket first... -->

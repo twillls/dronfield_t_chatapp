@@ -1,43 +1,61 @@
-// .is-typing {
-//     position: absolute;
-//     bottom: 40px;
-//     left: 10px;
-//     font-size: 14px;   
-//     font-weight: 100;     
-// }
-
-.message-wrapper{
-    position: absolute;
+.message-wrapper {
+    position: fixed;
     bottom: 0;
+    background-color: $house-blend;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 10px 30px;
 
-    span {
-        font-family: $default-family;
-        border: 1px solid $dark-brew;
-        overflow: auto;
-        border-radius: 5px;
-        line-height: 1.5;
-
-        padding: 8px 15px;
-
-        background-color: white;
-        font-size: 14px;
-
-        filter: $drop-shadow;
-
-        flex-grow: 1;
+    @media (min-width: 900px) {
+        padding: 10px 60px;
     }
 
-    input {
-        padding: 0 15px;
+    .text-message {
+        flex: 1 1 auto;
+        line-height: 1.5;
+        font-size: 14px;
+        background-color: $blonde-roast;
+        border: 1px solid $dark-brew;
         border-radius: 5px;
-        background-color: white;
-        font-size: 12px;
+        overflow: auto;
+        margin-right: 10px;
+        padding: 8px 15px;
+        outline: none;
+        resize: none;
 
-        &:hover {
-            @include button-hover;
+        &::-webkit-scrollbar {
+            width: 20px;
+            background-color: $dark-brew;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: $blonde-roast;
+            border: 1px solid $dark-brew;
         }
     }
+
+    .send-button {
+        @include button;
+    }
+}
+
+.new-message {
+    padding: 10px;
+    background-color: $dark-brew;
+    opacity: 0.7;
+    color: white;
+    border-radius: 8px;
+    float: left;
+    clear: both;
+    margin: 10px;
+    filter: $drop-shadow;
+}
+
+.my-message {
+    background-color: white;
+    color: $dark-brew;
+    opacity: 0.7; 
+    float: right;
+    text-align: right;
 }
